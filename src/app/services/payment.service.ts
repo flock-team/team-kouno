@@ -77,6 +77,7 @@ export class PaymentService {
     this.uiService.loading = true;
 
     return callable({
+      price: product.price,
       priceId: product.priceId,
       connectedAccountId,
       eventData,

@@ -10,6 +10,7 @@ export const payStripeProduct = functions
   .https.onCall(
     async (
       data: {
+        price: number;
         priceId: string;
         connectedAccountId?: string;
         eventData: {
@@ -44,7 +45,8 @@ export const payStripeProduct = functions
         functions.logger.info(data.connectedAccountId);
         // CtoCの場合、販売者アカウントとプラットフォームの手数料を設定に追加
         if (data.connectedAccountId) {
-          params.application_fee_amount = 10; // プラットフォーム手数料（%）
+          const PERCENTAGE_WHATEVER = 0.1; // 0.1 == 10%
+          params.application_fee_amount = data.price * PERCENTAGE_WHATEVER; // プラットフォーム手数料（%）
           params.transfer_data = { destination: data.connectedAccountId };
         }
 

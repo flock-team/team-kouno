@@ -15,7 +15,7 @@
       <div class="notice__content">
         <span class="notice__mark">※</span>
         <p class="notice__text">
-          販売アカウントの設定・変更をされる場合はフォーム記入前に行ってください。アカウント設定後、フォーム記入内容はリセットされます。
+          イベント料金を設定するには販売アカウントの作成が必要です。また、販売アカウントの作成・変更をされる場合はフォーム記入前に行ってください。アカウント設定後、フォーム記入内容はリセットされます。
         </p>
       </div>
     </div>
@@ -184,7 +184,7 @@
         </ng-container>
         <ng-template #createAccount>
           <p>
-            チケット料金の設定をするには、販売アカウントを作成してください。<a
+            チケット料金の設定をするには、販売アカウントを作成してください。料金を設定しない場合は作成する必要はありません。<a
               class="form-grid__ticket"
               (click)="connectedAccountService.createStripeConnectedAccount()"
               >販売アカウント作成</a
